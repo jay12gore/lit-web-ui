@@ -1,0 +1,38 @@
+{
+  "name": "lit-web-ui",
+  "private": false,
+  "version": "0.2.4",
+  "main": "dist/index.js",
+  "module": "dist/lit-web-ui.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build:ts": "npx tsc --project tsconfig.json",
+    "build": "vite build && npm run build:ts",
+    "postbuild": "cp -r src/types dist/",
+    "dev": "vite",
+    "preview": "vite preview",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@lit-labs/react": "^2.1.3",
+    "@types/react": "^18.3.18",
+    "@vitejs/plugin-react": "^4.3.4",
+    "lit": "^3.2.1",
+    "vite": "^6.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "author": "Jayesh Gore",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
