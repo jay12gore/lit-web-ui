@@ -16,6 +16,12 @@
     <lit-accordion header="Accordion 2" opened>
       Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </lit-accordion>
-    <lit-button variant="success">Click me</lit-button>
+    <lit-button id="my-button" variant="success">Click me!</lit-button>
+    <script>
+      const button = document.getElementById('my-button');
+      button.addEventListener('click', (event) => {
+        console.log('Event detail:', event);
+      });
+    </script>
   </body>
 </html>

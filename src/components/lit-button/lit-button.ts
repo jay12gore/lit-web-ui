@@ -48,10 +48,21 @@ export class LitButton extends LitElement {
 
     @property({ type: String }) variant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' = 'primary';
     @property({ type: Boolean }) disabled = false;
+
+    private handleClick() {
+        // Dispatch a custom event
+        this.dispatchEvent(
+          new CustomEvent('litButtonClick', {
+            detail: { message: 'Button clicked!' }, // Custom data
+            bubbles: true,                          // Allow the event to bubble up the DOM
+            composed: true,                         // Allow the event to cross the shadow DOM boundary
+          })
+        );
+      }
     
     render() {
         return html`
-            <button class="${this.variant}" ?disabled="${this.disabled}">
+            <button class="${this.variant}" ?disabled="${this.disabled}" @click=${this.handleClick}>
                 <slot></slot>
             </button>
         `;

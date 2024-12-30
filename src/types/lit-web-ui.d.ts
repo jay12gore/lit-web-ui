@@ -18,6 +18,7 @@ declare global {
       'lit-button': {
         variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
         disabled?: boolean;
+        litButtonClick?: (event: CustomEvent) => void;
       };
     }
   }
@@ -32,6 +33,7 @@ export interface ReactLitAccordionProps {
 export interface ReactLitButtonProps {
   variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
   disabled?: boolean;
+  litButtonClick?: (event: CustomEvent) => void;
 }
 
 // Export the Type Declarations
